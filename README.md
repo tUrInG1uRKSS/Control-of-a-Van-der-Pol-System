@@ -42,7 +42,8 @@ This method approximates the non-linear system to a linear one around the equili
 * **Logic:** Jacobian linearization.
 * **Implemented Control Law:**
     $$u = 1 - 5(x_{1}-1) - 5x_{2}$$
-    *(Derived assuming gains $$k_{1} = -5, k_{2} = -5$$ )*.
+  
+    *(Derived assuming gains $$k_1 = -5, k_2 = -5$$ )*.
 
 ### 2. Feedback Linearization
 This method transforms the non-linear system into a linear system via non-linear feedback cancellation.
