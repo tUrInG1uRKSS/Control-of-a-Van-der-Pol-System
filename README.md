@@ -18,7 +18,7 @@ $$
 \frac{d^{2}x}{dt^{2}} - \mu(1-x^{2})\frac{dx}{dt} + x = 0
 $$
 
-In state-space representation, where $x_1$ is position and $x_2$ is velocity:
+In state-space representation, where $$x_1$$ is position and $$x_2$$ is velocity:
 
 $$
 \begin{cases}
@@ -28,9 +28,9 @@ $$
 $$
 
 **System Parameters used in this study:**
-* [cite_start]$k = 1$ 
-* [cite_start]$c = 0.1$ (determines non-linearity)
-* [cite_start]$u$: Control signal
+* $$k = 1$$ 
+* $$c = 0.1$$ (determines non-linearity)
+* $$u$$: Control signal
 
 ## 🎛️ Control Algorithms
 
@@ -42,12 +42,12 @@ This method approximates the non-linear system to a linear one around the equili
 * **Logic:** Jacobian linearization.
 * **Implemented Control Law:**
     $$u = 1 - 5(x_{1}-1) - 5x_{2}$$
-    *(Derived assuming gains $k_1 = -5, k_2 = -5$)*.
+    *(Derived assuming gains $$k_1 = -5, k_2 = -5$$)*.
 
 ### 2. Feedback Linearization
 This method transforms the non-linear system into a linear system via non-linear feedback cancellation.
 
-* **Logic:** Defines a new input $v$ to cancel non-linear terms.
+* **Logic:** Defines a new input $$v$$ to cancel non-linear terms.
 * **Implemented Control Law:**
     $$u = -9(x_{1}-1) - 3x_{2} + x_{1} - 0.1(1-x_{1}^{2})x_{2}$$
     *(Derived using PD control on the linearized system)*.
@@ -58,9 +58,9 @@ The Van der Pol oscillator is physically modeled using an analog circuit.
 
 ### Components List:
 * **Operational Amplifiers:** LM741 (Integrators and Summers)
-* **Multipliers:** AD633 (For non-linear $x^2$ terms)
-* **Resistors:** $1M\Omega$ (main integrators), $130\Omega$, $1.2k\Omega$, etc.
-* **Capacitors:** $1\mu F$
+* **Multipliers:** AD633 (For non-linear $$x^2$$ terms)
+* **Resistors:** $$1M\Omega$$ (main integrators), $$130\Omega$$, $$1.2k\Omega$$, etc.
+* **Capacitors:** $$1\mu F$$
 
 ### Circuit Diagram
 <img width="1232" height="751" alt="image" src="https://github.com/user-attachments/assets/582b292a-9f32-40d5-9590-ec979df95299" />
@@ -71,7 +71,7 @@ The Van der Pol oscillator is physically modeled using an analog circuit.
 * **Proteus:** Used for circuit simulation and open-loop validation.
 * **MATLAB/Simulink:** Used for algorithm design, stability analysis, and simulation.
 * **LabVIEW:** Used for real-time digital control implementation.
-* **NI-DAQ:** Interface for reading states $x_1, x_2$ and outputting control $u$.
+* **NI-DAQ:** Interface for reading states $$x_1, x_2$$ and outputting control $$u$$.
 
 ## 📊 Results & Performance
 
