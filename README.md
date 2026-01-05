@@ -1,22 +1,22 @@
 # Digital Implementation of Feedback Linearization and Simple Linearization for a Van der Pol System
 
-This repository contains the source code, simulations, and documentation for the digital implementation of control strategies applied to a Van der Pol oscillator. [cite_start]The project compares **Feedback Linearization** and **Simple Linearization** techniques to stabilize the system's limit cycles[cite: 1, 7].
+This repository contains the source code, simulations, and documentation for the digital implementation of control strategies applied to a Van der Pol oscillator. The project compares **Feedback Linearization** and **Simple Linearization** techniques to stabilize the system's limit cycles.
 
 ## 📄 Project Overview
 
-[cite_start]The Van der Pol oscillator is a non-linear system known for self-sustaining oscillations (limit cycles)[cite: 14]. [cite_start]This project models the oscillator using an analog electronic circuit and implements digital control algorithms using **LabVIEW** and **National Instruments Data Acquisition (NI DAQ)** hardware[cite: 9, 16].
+The Van der Pol oscillator is a non-linear system known for self-sustaining oscillations (limit cycles). This project models the oscillator using an analog electronic circuit and implements digital control algorithms using **LabVIEW** and **National Instruments Data Acquisition (NI DAQ)** hardware.
 
-[cite_start]The primary objective is to control the system efficiently, minimizing steady-state error and maximum overshoot[cite: 17].
+The primary objective is to control the system efficiently, minimizing steady-state error and maximum overshoot.
 
 ## ⚙️ System Description
 
-[cite_start]The system is governed by the Van der Pol differential equation[cite: 21]:
+The system is governed by the Van der Pol differential equation:
 
 $$
 \frac{d^{2}x}{dt^{2}} - \mu(1-x^{2})\frac{dx}{dt} + x = 0
 $$
 
-[cite_start]In state-space representation, where $x_1$ is position and $x_2$ is velocity[cite: 26, 102]:
+In state-space representation, where $x_1$ is position and $x_2$ is velocity:
 
 $$
 \begin{cases}
@@ -26,35 +26,35 @@ $$
 $$
 
 **System Parameters used in this study:**
-* [cite_start]$k = 1$ [cite: 32]
-* [cite_start]$c = 0.1$ (determines non-linearity) [cite: 32]
-* [cite_start]$u$: Control signal [cite: 31]
+* [cite_start]$k = 1$ 
+* [cite_start]$c = 0.1$ (determines non-linearity)
+* [cite_start]$u$: Control signal
 
 ## 🎛️ Control Algorithms
 
 This project implements and compares two distinct control strategies.
 
 ### 1. Simple Linearization
-[cite_start]This method approximates the non-linear system to a linear one around the equilibrium point $(0,0)$ using Taylor series expansion[cite: 96, 151].
+This method approximates the non-linear system to a linear one around the equilibrium point $(0,0)$ using Taylor series expansion.
 
 * **Logic:** Jacobian linearization.
 * **Implemented Control Law:**
     $$u = 1 - 5(x_{1}-1) - 5x_{2}$$
-    [cite_start]*(Derived assuming gains $k_1 = -5, k_2 = -5$)*[cite: 136].
+    *(Derived assuming gains $k_1 = -5, k_2 = -5$)*.
 
 ### 2. Feedback Linearization
-[cite_start]This method transforms the non-linear system into a linear system via non-linear feedback cancellation[cite: 97].
+This method transforms the non-linear system into a linear system via non-linear feedback cancellation.
 
 * **Logic:** Defines a new input $v$ to cancel non-linear terms.
 * **Implemented Control Law:**
     $$u = -9(x_{1}-1) - 3x_{2} + x_{1} - 0.1(1-x_{1}^{2})x_{2}$$
-    [cite_start]*(Derived using PD control on the linearized system)*[cite: 240].
+    *(Derived using PD control on the linearized system)*.
 
 ## 🔌 Hardware Implementation
 
-[cite_start]The Van der Pol oscillator is physically modeled using an analog circuit[cite: 8, 75].
+The Van der Pol oscillator is physically modeled using an analog circuit.
 
-### [cite_start]Components List[cite: 78, 80]:
+### Components List:
 * **Operational Amplifiers:** LM741 (Integrators and Summers)
 * **Multipliers:** AD633 (For non-linear $x^2$ terms)
 * **Resistors:** $1M\Omega$ (main integrators), $130\Omega$, $1.2k\Omega$, etc.
@@ -66,23 +66,21 @@ This project implements and compares two distinct control strategies.
 
 ## 💻 Software & Tools
 
-* [cite_start]**Proteus:** Used for circuit simulation and open-loop validation[cite: 47].
-* [cite_start]**MATLAB/Simulink:** Used for algorithm design, stability analysis, and simulation[cite: 138].
-* [cite_start]**LabVIEW:** Used for real-time digital control implementation[cite: 248].
-* [cite_start]**NI-DAQ:** Interface for reading states $x_1, x_2$ and outputting control $u$[cite: 248].
+* **Proteus:** Used for circuit simulation and open-loop validation.
+* **MATLAB/Simulink:** Used for algorithm design, stability analysis, and simulation.
+* **LabVIEW:** Used for real-time digital control implementation.
+* **NI-DAQ:** Interface for reading states $x_1, x_2$ and outputting control $u$.
 
 ## 📊 Results & Performance
 
-Both controllers successfully stabilized the system. [cite_start]However, **Feedback Linearization** proved to be more robust and faster[cite: 345].
+Both controllers successfully stabilized the system. However, **Feedback Linearization** proved to be more robust and faster.
 
 | Performance Metric | Feedback Linearization | Simple Linearization |
 | :--- | :--- | :--- |
 | **Settling Time** | 1.2 s | 2.5 s |
 | **Overshoot** | 5% | 15% |
 | **Steady State Error** | 0.01 | 0.05 |
-[cite_start]*(Data based on Table I of the project report)* [cite: 344]
-
-
+*(Data based on Table I of the project report)* [
 
 ## 🚀 How to Run
 
@@ -97,13 +95,13 @@ Both controllers successfully stabilized the system. [cite_start]However, **Feed
 
 ## 👥 Authors
 
-* [cite_start]**Leandro Llontop Herrera** - *Universidad Nacional de Ingeniería* [cite: 2]
-* [cite_start]**Juan Contreras Avendaño** - *Universidad Nacional de Ingeniería* [cite: 3]
-* [cite_start]**Jordan Delgado Gutierrez** - *Universidad Nacional de Ingeniería* [cite: 5]
-* [cite_start]**Carlos Felipe Sebastián Aldave Torres** - *Universidad Nacional de Ingeniería* [cite: 6]
+* **Leandro Llontop Herrera** - *Universidad Nacional de Ingeniería* 
+* **Juan Contreras Avendaño** - *Universidad Nacional de Ingeniería* 
+* **Jordan Delgado Gutierrez** - *Universidad Nacional de Ingeniería* 
+* **Carlos Felipe Sebastián Aldave Torres** - *Universidad Nacional de Ingeniería*
 
 ## 📚 References
 
-1.  V. Sundarapandian, "Output Regulation of Van der Pol Oscillator," *IE(1) Journal-EL*, vol. [cite_start]88, pp. 20-27, Dec. 2007. [cite: 371]
-2.  J.-J. [cite_start]E. Slotine and W. Li, *Applied Nonlinear Control*, Prentice-Hall, 1991. [cite: 372]
-3.  [cite_start]A. Isidori, *Nonlinear Control Systems*, Springer Science & Business Media, 1995. [cite: 375]
+1.  V. Sundarapandian, "Output Regulation of Van der Pol Oscillator," *IE(1) Journal-EL*, vol. 88, pp. 20-27, Dec. 2007.
+2.  J.-J. E. Slotine and W. Li, *Applied Nonlinear Control*, Prentice-Hall, 1991. 
+3.  A. Isidori, *Nonlinear Control Systems*, Springer Science & Business Media, 1995. 
