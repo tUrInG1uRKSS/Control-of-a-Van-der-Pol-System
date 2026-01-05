@@ -63,8 +63,8 @@ The Van der Pol oscillator is physically modeled using an analog circuit.
 * **Capacitors:** $1\mu F$
 
 ### Circuit Diagram
-*(Ensure your repo contains the schematic image, e.g., in an `images/` folder)*
-![Circuit Diagram](path/to/circuit_diagram_image.png)
+<img width="1232" height="751" alt="image" src="https://github.com/user-attachments/assets/582b292a-9f32-40d5-9590-ec979df95299" />
+
 
 ## 💻 Software & Tools
 
