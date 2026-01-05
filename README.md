@@ -7,6 +7,8 @@ This repository contains the source code, simulations, and documentation for the
 The Van der Pol oscillator is a non-linear system known for self-sustaining oscillations (limit cycles). This project models the oscillator using an analog electronic circuit and implements digital control algorithms using **LabVIEW** and **National Instruments Data Acquisition (NI DAQ)** hardware.
 
 The primary objective is to control the system efficiently, minimizing steady-state error and maximum overshoot.
+![IMG_20240627_153843](https://github.com/user-attachments/assets/373dd4e5-8ed5-4a47-96e4-95b7cfbbf2ca)
+
 
 ## ⚙️ System Description
 
